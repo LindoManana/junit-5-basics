@@ -42,7 +42,7 @@ class MathUtilsTest {
 	}
 
 	@AfterAll
-	void done() {
+	static void done() {
 		System.out.println("@AfterAll - executed after all test methods.");
 	}
 
@@ -75,9 +75,7 @@ class MathUtilsTest {
 	@DisplayName("Test multiplication")
 	void testMultiply() {
 		System.out.println("Running test ==> " + testInfo.getDisplayName());
-		assertAll(
-				() -> assertEquals(0, mathUtil.multiply(1, 0)), 
-				() -> assertEquals(1, mathUtil.multiply(1, 1)),
+		assertAll(() -> assertEquals(0, mathUtil.multiply(1, 0)), () -> assertEquals(1, mathUtil.multiply(1, 1)),
 				() -> assertEquals(6, mathUtil.multiply(2, 3)));
 	}
 
